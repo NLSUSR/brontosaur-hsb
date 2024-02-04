@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { InfoBox } from "./info-box";
-import { TextBox, Subtitle } from "./top-establishment";
+import {
+  TE_TextBox,
+  TE_Subtitle,
+} from "./top-establishment";
+import chikipiki from "/images/chiki=piki.jpeg";
 
 const Establishment_ = styled.div`
   width: 1020px;
@@ -31,28 +35,37 @@ const Title = styled.h2`
   text-align: left;
 `;
 
-const Image = styled.div`
+const Box = styled.div`
   width: 228px;
   height: 228px;
   border-radius: 10px;
-  background: center / 342px no-repeat rgb(231, 239, 244)
-    url("/images/chiki=piki.jpeg");
+  overflow: hidden;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 1.5;
 `;
 
 export const Establishment = () => {
   return (
     <Establishment_>
       <div className="flex flex-col gap-8">
-        <TextBox>
+        <TE_TextBox>
           <Title>Чики-Пики</Title>
-          <Subtitle style={{ width: "569px" }}>
+          <TE_Subtitle style={{ width: "569px" }}>
             Мы предлагаем нашим посетителям лучший рамён в городе. Приходите
             попробовать! Тут можно сделать какое-то описание.
-          </Subtitle>
-        </TextBox>
+          </TE_Subtitle>
+        </TE_TextBox>
         <InfoBox></InfoBox>
       </div>
-      <Image></Image>
+      <Box>
+        <Image src={chikipiki}></Image>
+      </Box>
     </Establishment_>
   );
 };

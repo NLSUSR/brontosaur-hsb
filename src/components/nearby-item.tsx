@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import location from "/images/location_on.svg";
 
 const Name = styled.h4`
   width: 96px;
@@ -51,11 +52,7 @@ export const NearbyItem = (props: { children: any }) => {
       <div className="flex  justify-between">
         <Name>{e.name}</Name>
         <Distanse>
-          <img
-            className="w-4 h-4"
-            src="/images/location_on.svg"
-            alt={e.distance}
-          />
+          <img className="w-4 h-4" src={location} alt={e.distance} />
           <p>{e.distance}</p>
         </Distanse>
       </div>

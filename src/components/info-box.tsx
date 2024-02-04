@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import balance from "/images/account_balance_wallet.svg";
+import timer from "/images/av_timer.svg";
+import star from "/images/kid_star.svg";
+import location from "/images/location_on.svg";
+import book from "/images/menu_book.svg";
+import restaurant from "/images/restaurant.svg";
 
 const Box = styled.div`
   width: 522px;
@@ -48,15 +54,15 @@ const Item = styled.li`
 `;
 
 const right = [
-  { image: "/images/restaurant.svg", text: "Кафе" },
-  { image: "/images/account_balance_wallet.svg", text: "₽ ₽" },
-  { image: "/images/kid_star.svg", text: "4.5" },
+  { image: restaurant, text: "Кафе" },
+  { image: balance, text: "₽ ₽" },
+  { image: star, text: "4.5" },
 ];
 
 const left = [
-  { image: "/images/menu_book.svg", text: "Европейская, азиатская кухня" },
-  { image: "/images/av_timer.svg", text: "10:00-23:00" },
-  { image: "/images/location_on.svg", text: "ул. Томшевского 12-34" },
+  { image: book, text: "Европейская, азиатская кухня" },
+  { image: timer, text: "10:00-23:00" },
+  { image: location, text: "ул. Томшевского 12-34" },
 ];
 
 export const InfoBox = () => {

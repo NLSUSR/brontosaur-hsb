@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import location from "/images/location_on.svg";
+import favorite from "/images/favorite.svg";
+import circle from "/images/account_circle.svg";
 
 const Header_ = styled.header`
   width: 1368px;
@@ -44,11 +47,11 @@ export const Header = () => {
       <Title>Brontosaur</Title>
       <div className="flex gap-6">
         <div className="flex gap-2.5">
-          <img className="w-6 h-6" src="/images/location_on.svg" alt="" />
+          <img className="w-6 h-6" src={location} alt="" />
           <Location>Санкт-Петербург</Location>
         </div>
-        <img className="w-6 h-6" src="/images/favorite.svg" alt="" />
-        <img className="w-6 h-6" src="/images/account_circle.svg" alt="" />
+        <img className="w-6 h-6" src={favorite} alt="" />
+        <img className="w-6 h-6" src={circle} alt="" />
       </div>
     </Header_>
   );

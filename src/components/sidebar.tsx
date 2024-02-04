@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { NearbyItem } from "./nearby-item";
+import search from "/images/search.svg";
+import { EstablishmentsNewThings } from "./establishments-new-things";
 
 const Sidebar_ = styled.section`
   width: 324px;
@@ -55,8 +57,7 @@ const EstablishmentsNearby = styled.div`
   gap: 34px;
 `;
 
-const Title = styled.h3`
-  position: static;
+export const SB_Title = styled.h3`
   width: 256px;
   height: 32px;
   display: flex;
@@ -119,16 +120,19 @@ export const Sidebar = () => {
     <Sidebar_>
       <Search>
         <Text>Поиск заведения</Text>
-        <img src="/images/search.svg" alt="Поиск заведения" />
+        <div className=" w-6 h-6">
+          <img src={search} alt="Поиск заведения" />
+        </div>
       </Search>
       <EstablishmentsNearby>
-        <Title>Заведения рядом</Title>
+        <SB_Title>Заведения рядом</SB_Title>
         <NearbyList>
           {nearby.map((e: any, i) => {
             return <NearbyItem key={i}>{e}</NearbyItem>;
           })}
         </NearbyList>
       </EstablishmentsNearby>
+      <EstablishmentsNewThings></EstablishmentsNewThings>
     </Sidebar_>
   );
 };

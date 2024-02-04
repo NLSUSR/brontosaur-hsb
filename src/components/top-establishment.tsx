@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { InfoBox } from "./info-box";
+import photo from "/images/photo.jpeg";
 
 const TopEstablishment_ = styled.div`
   width: 1020px;
@@ -15,12 +16,22 @@ const TopEstablishment_ = styled.div`
   gap: 34px;
 `;
 
-const Image = styled.div`
+const Box = styled.div`
   width: 952px;
   height: 300px;
   border-radius: 10px;
-  background: rgb(231, 239, 244) url("/images/photo.jpeg") no-repeat
-    center/cover;
+  background: rgb(231, 239, 244);
+  overflow: hidden;
+  position: relative;
+`;
+
+const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const TitleBox = styled.div`
@@ -70,13 +81,13 @@ const Wrapper = styled.div`
   gap: 34px;
 `;
 
-export const TextBox = styled.div`
+export const TE_TextBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px;
 `;
 
-export const Subtitle = styled.p`
+export const TE_Subtitle = styled.p`
   width: 648px;
   height: 48px;
   display: flex;
@@ -95,18 +106,20 @@ export const Subtitle = styled.p`
 export const TopEstablishment = () => {
   return (
     <TopEstablishment_>
-      <Image></Image>
+      <Box>
+        <Image src={photo} alt="" />
+      </Box>
       <Wrapper>
-        <TextBox>
+        <TE_TextBox>
           <TitleBox>
             <Title>Бамбук</Title>
             <Button>Brontosaur рекомендует</Button>
           </TitleBox>
-          <Subtitle>
+          <TE_Subtitle>
             Мы предлагаем нашим посетителям лучший рамён в городе. Приходите
             попробовать! Тут можно сделать какое-то описание.
-          </Subtitle>
-        </TextBox>
+          </TE_Subtitle>
+        </TE_TextBox>
         <InfoBox></InfoBox>
       </Wrapper>
     </TopEstablishment_>
